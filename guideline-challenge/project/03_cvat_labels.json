@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "name": "stop",
+    "color": "#E53935",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "no_entry",
+    "color": "#D81B60",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "speed_limit",
+    "color": "#1E88E5",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "give_way",
+    "color": "#FB8C00",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "warning",
+    "color": "#FDD835",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "other",
+    "color": "#8E24AA",
+    "type": "rectangle",
+    "attributes": []
+  },
+  {
+    "name": "unknown",
+    "color": "#757575",
+    "type": "rectangle",
+    "attributes": []
+  }
+]
