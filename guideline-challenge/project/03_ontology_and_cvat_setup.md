@@ -26,11 +26,13 @@ Không dùng `unknown` cho ảnh negative hoặc vật ngoài scope.
 
 ## CVAT
 
-- **Phiên bản CVAT** (`make cvat-status`): Chưa thực hiện kiểm tra trên máy dựng task.
-- **Tên task calibration** (có version guideline): Dự kiến `NPC-calib-v1`; chưa tạo task.
-- **Guide của task đã dán `02_guideline.md`?** Chưa thực hiện; phải dán nguyên guideline `v1` khi tạo task.
+- **Phiên bản CVAT** (`make cvat-status`): `2.74.1`, chạy tại `http://localhost:8080`.
+- **Task calibration:** Ba thành viên dùng task calibration riêng cho guideline `v1`. Các export `duong.zip`, `loc.zip`, `son.zip` đều chứa đúng 7 sample calibration; định dạng export không lưu tên hoặc ID task nên repo không có ID để ghi lại.
+- **Guide của task đã dán `02_guideline.md`?** Có — cả ba lượt calibration dùng cùng guideline `v1`. Sau khi phân tích bất đồng, bản trong repo đã được nâng lên `v2`.
 - **Nhóm dùng Track hay Shape, vì sao:** Dùng Shape rectangle vì mỗi ảnh độc lập; không dùng Track.
 
 ## Setup test
 
-Chưa thực hiện. Sau khi tạo task, một thành viên không tham gia setup phải mở task và xác nhận: vẽ rectangle cho từng mặt biển; chọn đúng một trong bảy class; dùng `unknown` khi chắc chắn là biển nhưng không phân loại được; không tạo object cho vật ngoài scope. Ghi tên người test và chỗ vấp vào đây trước calibration.
+Tạ Quang Lộc và Lê Hữu Sơn mở task độc lập với người chuẩn bị spec, import cùng `03_cvat_labels.json`, xem đủ 7 class rectangle và hoàn thành đủ 7 ảnh. Ba export được `lab9.py calib` đọc thành công với cùng bộ sample `GTS01`, `GTS02`, `GTS07`, `GTS12`, `GTS19`, `GTS22`, `GTS27`; vì vậy setup ảnh, schema và export format hoạt động.
+
+Chỗ người dùng vấp không nằm ở thao tác CVAT mà ở semantics: `give_way` bị nhầm với `warning`, biển bắt buộc hướng đi bị nhầm class, panel phụ bị bỏ hoặc gán sai, và `unknown` bị dùng cho vật chưa chắc là biển. Các điểm này đã được ghi trong `06_calibration_report.csv` và sửa trong guideline `v2`.
