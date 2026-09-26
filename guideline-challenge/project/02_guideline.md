@@ -1,6 +1,6 @@
 # Annotation guideline — Phát hiện và phân loại mặt trước biển báo giao thông
 
-**Version:** v2
+**Version:** v3
 
 ## 1. Objective + scope
 
@@ -46,7 +46,8 @@ Quy tắc ưu tiên:
 2. Tam giác đứng cảnh báo nguy hiểm là `warning`.
 3. Biển tròn xanh có mũi tên/hướng đi là `other`, không phải `give_way`, `warning` hay `stop`.
 4. Panel thông tin, panel phụ và chevron official có mặt biển riêng dùng `other`, kể cả khi không đọc được chữ.
-5. `other` nghĩa là nhận ra loại biển nằm ngoài năm class cụ thể; `unknown` chỉ dùng khi không đủ bằng chứng chọn class.
+5. Mọi biển cấm có hình tròn viền đỏ (ngoài `speed_limit` và `no_entry`, ví dụ: biển cấm vượt xe tải, cấm vượt xe con, cấm quay đầu) PHẢI gán `other`, TUYỆT ĐỐI KHÔNG gán `warning`. Class `warning` CHỈ dành cho biển hình tam giác đứng (đỉnh hướng lên).
+6. `other` nghĩa là nhận ra loại biển nằm ngoài năm class cụ thể; `unknown` chỉ dùng khi không đủ bằng chứng chọn class.
 
 Không tự tạo class mới.
 
@@ -77,6 +78,7 @@ Không tự tạo class mới.
 - Nếu chỉ thấy một đốm/hình mờ và không thể xác nhận đó là mặt biển official, không tạo box. Không dùng `unknown` để đánh dấu vật chưa chắc là biển.
 - Không đọc được chữ trên panel phụ không tự động thành `unknown`: nếu hình thức và vị trí cho thấy rõ đó là panel official ngoài năm class cụ thể, dùng `other`.
 - Với biển bị che hoặc cắt mép, box chỉ phần mặt biển thực sự nhìn thấy.
+- Khi quan sát ngã ba, ngã tư hoặc lối rẽ, annotator bắt buộc phóng to quét các lối rẽ phụ và đường đối diện để không bỏ sót các biển cấm `no_entry` ở khoảng cách xa.
 - Loá, ngược sáng hoặc motion blur dùng cùng quy tắc bằng chứng trên.
 
 ## 7. Ambiguity / escalation
@@ -118,6 +120,8 @@ Các ảnh dưới đây thuộc split `example` hoặc `calibration`, không d�
 - Box cả cột/giá đỡ hoặc cắt mất mép mặt biển: box đủ mặt biển nhìn thấy, không lấy nền.
 - Đoán phần bị che để vẽ amodal box: chỉ vẽ phần nhìn thấy.
 - Gọi tam giác ngược là `warning`: phải dùng `give_way`.
+- Gán biển cấm viền tròn đỏ (như cấm vượt xe tải, cấm quay đầu) thành `warning`: Đây là lỗi nghiêm trọng. `warning` chỉ dành cho biển tam giác đỉnh hướng lên. Mọi biển cấm tròn viền đỏ ngoài `speed_limit`/`no_entry` bắt buộc gán `other`.
+- Bỏ sót biển cấm `no_entry` nhỏ ở lối rẽ đối diện: Phải quét kỹ toàn bộ khu vực giao lộ và lối rẽ phụ.
 - Gọi biển tròn xanh chỉ hướng là `stop`, `warning` hoặc `give_way`: dùng `other`.
 - Dùng `other` khi không rõ class: dùng `unknown` nếu chắc chắn là biển; `other` chỉ dùng khi biết biển nằm ngoài năm class cụ thể.
 - Dùng `unknown` cho một đốm chưa chắc là biển: trường hợp này không tạo object.

@@ -3,8 +3,8 @@
 Điền trước phút 15. Thay mọi placeholder; còn sót thì `make status` báo ở gate G1.
 
 - **Team:** NPC
-- **Nhóm peer test bài của mình:** Chưa được Lab Coach chỉ định
-- **Nhóm mình test bài của:** Chưa được Lab Coach chỉ định
+- **Nhóm peer test bài của mình:** sudo-lite
+- **Nhóm mình test bài của:** sudo-lite
 - **Problem family:** Traffic sign taxonomy
 - **Nguồn ảnh:** `gtsdb`, `bdd100k`
 

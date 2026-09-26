@@ -1,8 +1,8 @@
-CVAT task reference — thay mọi placeholder mới là xong.
+CVAT task reference — thông tin đối chiếu task và file nộp.
 
-CVAT version: TODO
-Task calibration (tên, id): TODO
-Task bản cuối theo guideline v3 (tên, id) hoặc lý do không có: TODO
-File export đã nộp (đường dẫn trong repo): TODO
-Guideline version dán trong Guide của task: TODO
-Ghi chú cho người tiếp nhận: TODO
+CVAT version: 2.74.1 (chạy local tại http://localhost:8080)
+Task calibration (tên, id): NPC-calib-duong, NPC-calib-loc, NPC-calib-son (3 task độc lập cho 7 ảnh calibration)
+Task bản cuối theo guideline v3 (tên, id) hoặc lý do không có: Không tạo task v3 riêng vì kết quả blind handoff đã chốt qua export anotation.zip của nhóm peer (sudo-lite); guideline v3 là bản hoàn thiện tổng kết sau peer review.
+File export đã nộp (đường dẫn trong repo): project/06_calibration_exports/duong.zip, project/06_calibration_exports/loc.zip, project/06_calibration_exports/son.zip, project/07_blind_handoff/peer_output/anotation.zip
+Guideline version dán trong Guide của task: v1 cho task calibration nội bộ; v2 cho task blind handoff gửi peer
+Ghi chú cho người tiếp nhận: Schema CVAT gồm 7 class rectangle không attributes. Toàn bộ bằng chứng chấm điểm blind test và phân tích nguyên nhân được lưu tại 07_blind_handoff/.

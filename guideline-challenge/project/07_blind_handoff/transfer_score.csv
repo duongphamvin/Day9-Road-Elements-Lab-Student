@@ -1,0 +1,13 @@
+sample_id,decision_id,expected,severity,kind,peer_evidence,correct,note
+GTS21,d1,label=other x1,major,decision,other×5,0,"gold sai: gold chỉ chốt 1 biển tròn xanh chính, bỏ sót 3 biển chỉ hướng và 1 biển người đi bộ bên trái mà peer đã gán nhãn đúng theo mục 5 guideline"
+GTS21,d2,"geometry: 1 tight visible box quanh mặt tròn xanh lớn; không gồm cột, đảo giao thông hay nền",minor,geometry,other×5,1,"Box ôm sát mặt biển tròn xanh, không dính cột hay đảo giao thông"
+GTS17,d1,label=no_entry x2,critical,decision,no_entry×2,1,"Phát hiện đủ 2 biển cấm vào no_entry ở 2 bên đường"
+GTS17,d2,"geometry: 2 tight visible boxes, mỗi box quanh đúng một mặt no_entry; không gồm cột hay bảng quảng cáo",major,geometry,no_entry×2,1,"Cả 2 box ôm sát mặt biển, loại bỏ biển quảng cáo cửa hàng bên cạnh"
+GTS24,d1,label=other x1,major,decision,other,1,"Nhận diện đúng biển tròn xanh đi thẳng là other"
+GTS24,d2,label=no_entry x1,critical,decision,other,0,"Bỏ sót biển no_entry nhỏ ở lối rẽ đối diện ngã tư"
+GTS24,d3,geometry: 2 tight visible boxes quanh mặt biển đi thẳng và no_entry nhỏ; không gồm cột hoặc đèn giao thông,major,geometry,other,0,"Chỉ vẽ 1 box cho biển đi thẳng, thiếu box cho biển no_entry nhỏ ở xa"
+GTS15,d1,label=other x1,major,decision,other,1,"Nhận diện đúng biển hết hạn chế là other"
+GTS15,d2,geometry: 1 tight visible box quanh mặt tròn gạch chéo; không gồm cột,minor,geometry,other,1,"Box ôm sát phần mặt biển nhìn thấy"
+GTS04,d1,label=speed_limit x2,critical,decision,speed_limit×2 | warning×2,1,"Phát hiện và phân loại đúng cả 2 biển tốc độ 120 ở 2 bên cao tốc"
+GTS04,d2,label=other x2,major,decision,speed_limit×2 | warning×2,0,"Gán nhầm 2 biển cấm vượt xe tải thành warning thay vì other do hình tròn viền đỏ"
+GTS04,d3,"geometry: 4 tight visible boxes, mỗi cặp trên một cột được tách thành 2 mặt; không gồm cột",major,geometry,speed_limit×2 | warning×2,1,"Tách đủ 4 box cho 2 cột đối xứng, box ôm sát từng panel mặt biển"
