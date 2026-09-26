@@ -1,1 +1,7 @@
 sample_id,item,values_by_annotator,diagnosis,action,rule_change
+GTS01,duplicate objects in two sign stacks,"duong=6 boxes; loc=6 boxes; son=9 boxes with one duplicate per class",execution_error,coaching,""
+GTS02,give_way versus warning and mandatory direction signs,"duong=2 give_way+2 other and missed center sign; loc=2 warning+2 other+1 stop; son=mixed labels with duplicate boxes",guideline_gap,add_example,"V2 distinguishes inverted give-way triangles from upright warning triangles and assigns blue mandatory direction signs to other; one visible face gets exactly one box."
+GTS07,tiny blurred circular object,"duong=1 unknown; loc=IGNORE; son=IGNORE",data_ambiguity,add_example,"V2 uses unknown only after confirming an official traffic-sign face; an unconfirmable tiny blur is IGNORE."
+GTS12,supplementary panels below warning sign,"duong=warning+other+unknown; loc=warning+stop; son=warning only",guideline_gap,revise_rule,"V2 treats each clearly bounded official supplementary panel as a separate other object; unreadable content alone does not make it unknown."
+GTS22,three official faces in one roadside assembly,"duong=other+give_way+other; loc=warning+other and missed top panel; son=warning only",guideline_gap,add_example,"V2 adds an example: top information panel and lower chevron are separate other objects; inverted triangle is give_way."
+GTS27,snowflake warning sign and box extent,"duong=unknown with cropped right edge; loc=warning; son=warning",execution_error,coaching,""

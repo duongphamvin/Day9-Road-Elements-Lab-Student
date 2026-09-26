@@ -1,1 +1,13 @@
 sample_id,decision_id,expected,severity,rationale
+GTS21,d1,label=other x1,major,"Biển tròn xanh bắt buộc rẽ/tránh chướng ngại là biển official ngoài năm class cụ thể."
+GTS21,d2,"geometry: 1 tight visible box quanh mặt tròn xanh lớn; không gồm cột, đảo giao thông hay nền",minor,"Geometry detector cần bám mặt biển thay vì cấu trúc đỡ."
+GTS17,d1,label=no_entry x2,critical,"Hai biển cấm đi vào ở hai vị trí riêng đều phải được phát hiện; bỏ sót gây rủi ro đi ngược chiều."
+GTS17,d2,"geometry: 2 tight visible boxes, mỗi box quanh đúng một mặt no_entry; không gồm cột hay bảng quảng cáo",major,"Hai instance phải tách riêng và loại vật thương mại ngoài scope."
+GTS24,d1,label=other x1,major,"Biển tròn xanh đi thẳng là biển bắt buộc hướng đi và thuộc other."
+GTS24,d2,label=no_entry x1,critical,"Biển no_entry nhỏ ở xa vẫn đủ hình dạng để label; bỏ sót là lỗi an toàn cao."
+GTS24,d3,"geometry: 2 tight visible boxes quanh mặt biển đi thẳng và no_entry nhỏ; không gồm cột hoặc đèn giao thông",major,"Hai biển chênh lệch kích thước vẫn là hai instance riêng."
+GTS15,d1,label=other x1,major,"Biển hết hạn chế là biển official nằm ngoài năm class cụ thể; không dùng unknown."
+GTS15,d2,"geometry: 1 tight visible box quanh mặt tròn gạch chéo; không gồm cột",minor,"Nội dung semantic khác nhưng geometry vẫn theo cùng rule tight visible."
+GTS04,d1,label=speed_limit x2,critical,"Hai biển giới hạn 120 ở hai phía đều là class critical và phải được phát hiện."
+GTS04,d2,label=other x2,major,"Hai biển cấm vượt xe tải là biển official ngoài class cụ thể; không phải no_entry."
+GTS04,d3,"geometry: 4 tight visible boxes, mỗi cặp trên một cột được tách thành 2 mặt; không gồm cột",major,"Không gộp panel xếp tầng hoặc bỏ một phía đường."
